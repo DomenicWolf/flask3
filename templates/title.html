@@ -1,9 +1,12 @@
 {% extends 'base.html'%}
 
 {% block content %}
+{% for msg in get_flashed_messages() %}
+    <p class="flash">{{msg}}</p>
+{% endfor %}
 <h1>{{title}}</h1>
 <h2>{{instructions}}</h2>
-<form action="/question/0">
+<form action="/set_up" method="post">
     <button>Begin</button>
 </form>
 
